@@ -379,7 +379,7 @@ ionic.views.Slider = ionic.views.View.inherit({
         var isValidSlide =
               Number(duration) < 250 &&         // if slide duration is less than 250ms
               Math.abs(delta.x) > 20 ||         // and if slide amt is greater than 20px
-              Math.abs(delta.x) > width / 2;      // or if slide amt is greater than half the width
+              Math.abs(delta.x) > width * options.amtWidth;      // or if slide amt is greater than half the width or the amt set in the options
 
         // determine if slide attempt is past start and end
         var isPastBounds = (!index && delta.x > 0) ||      // if first slide and slide amt is greater than 0
